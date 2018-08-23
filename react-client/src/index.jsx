@@ -43,8 +43,10 @@ class App extends React.Component {
 
 
   render () {
-    return (<div className = "remember">
+    return (
+      <div className = "remember">
       <h1>Important things to remember</h1>
+      
       <List items={this.state.items}/>
       <AddTask AddText={this.AddText}/>
     </div>)

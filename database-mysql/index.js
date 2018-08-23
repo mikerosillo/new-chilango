@@ -17,14 +17,14 @@ var selectAll = function(callback) {
   });
 };
 
-var insertOne = function(task, cb) {
- con.query('INSERT INTO items (task) VALUES (?)',
+var insertOne = function(task, callback) {
+ connection.query('INSERT INTO items (task) VALUES (?)',
    [task], (err, results, fields) => {
      if(err) {
-       cb(err, null);
+       callback(err, null);
      } else {
        console.log(results);
-       cb(null, results);
+       cbcallback(null, results);
      }
    });
 };

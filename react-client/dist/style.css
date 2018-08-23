@@ -1,0 +1,25 @@
+body, html{
+  height:100%;
+
+}
+body{
+
+  background-image: url("./pic.jpg");
+  background-opacity: 0.1;
+  background-repeat: no-repeat;
+  background-position: rigth top;
+  background-attachment: fixed;
+  background-size: cover;
+
+}
+h1{
+color:#4d1933;
+font-size: 80px;
+text-align: center;
+
+}
+.list{
+  color:#4d1933;
+  font-size: 30px;
+  margin-left: 70;
+}

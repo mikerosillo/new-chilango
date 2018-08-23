@@ -4,25 +4,26 @@ class AddTask extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text:""
+      task:""
     }
     this.handleChange = this.handleChange.bind(this);
-   this.handleSubmit = this.handleSubmit.bind(this);
+   this.add = this.add.bind(this);
   }
   handleChange(e) {
-  this.setState({text: e.target.value});
+  this.setState({task: e.target.value});
 }
 
-handleSubmit(e) {
-  alert('A task was created');
-  this.setState({text:""})
+add(e) {
+  //alert('A task was created');
+  this.props.AddText(this.state.task)
+  this.setState({task:""})
   e.preventDefault();
 }
     render(){
       return(
       <div className ="button">
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.text} onChange={this.handleChange} />
+        <form onClick={this.add}>
+          <input type="text" value={this.state.task} onChange={this.handleChange} />
           <input type="submit" value="Submit" />
         </form>
       </div>

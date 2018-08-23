@@ -10,16 +10,16 @@ class App extends React.Component {
     this.state = {
       items: []
     }
-    this.addText=this.addText.bind(this);
+    this.AddText=this.AddText.bind(this);
     this.getText=this.getText.bind(this);
   }
-  addText(description, quantity){
+  AddText(task){
      $.ajax({
        method: "POST",
        url: "/items",
        contentType: 'application/json',
        data: JSON.stringify({
-        text: text,
+        task: task,
        })
      }).done(() => {
        this.getText();
@@ -30,10 +30,10 @@ class App extends React.Component {
       url: '/items',
       method: 'GET',
       success: (results) => {
-        this.setState({text:results});
+        this.setState({task:results});
       },
       error: (xhr, err) => {
-        console.log('err', err);
+        console.log('error', err);
       }
     })
     }
@@ -41,11 +41,12 @@ class App extends React.Component {
     this.getText();
   }
 
+
   render () {
     return (<div className = "remember">
       <h1>Important things to remember</h1>
       <List items={this.state.items}/>
-      <AddTask addText={this.addText}/>
+      <AddTask AddText={this.AddText}/>
     </div>)
   }
 }

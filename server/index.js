@@ -14,21 +14,22 @@ app.use(express.static(__dirname + '/../react-client/dist'));
 // app.use(express.static(__dirname + '/../node_modules'));
 
 app.get('/items', function (req, res) {
-  items.selectAll(function(err, data) {
+  console.log(req.body.task)
+  items.selectAll(function(err, results) {
     if(err) {
       res.sendStatus(500);
     } else {
-      res.status(200).json(data);
+      res.status(200).json(results);
     }
-  });
+    });
 });
-app.post('/groceries', function(req, res){
-  let text    = req.body.text;
+app.post('/items', function(req, res){
+  let task    = req.body.task;
 
- if(!text) {
+ if(!task) {
    res.sendStatus(400);
  } else {
-   database.insertOne(text, (err, results) => {
+   database.insertOne(task, (err, results) => {
      if (err) {
        res.sendStatus(500);
      } else {

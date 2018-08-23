@@ -16,9 +16,9 @@ var selectAll = function(callback) {
     }
   });
 };
-var insertOne = function(description, quantity, cb) {
- con.query('INSERT INTO items (task) VALUES (?, ?)',
-   [text], (err, results, fields) => {
+var insertOne = function(task, cb) {
+ con.query('INSERT INTO items (task) VALUES (?)',
+   [task], (err, results, fields) => {
      if(err) {
        cb(err, null);
      } else {

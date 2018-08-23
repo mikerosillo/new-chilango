@@ -30,7 +30,7 @@ class App extends React.Component {
       url: '/items',
       method: 'GET',
       success: (results) => {
-        this.setState({task:results});
+        this.setState({items:results});
       },
       error: (xhr, err) => {
         console.log('error', err);

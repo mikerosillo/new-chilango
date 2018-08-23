@@ -14,7 +14,7 @@ app.use(express.static(__dirname + '/../react-client/dist'));
 // app.use(express.static(__dirname + '/../node_modules'));
 
 app.get('/items', function (req, res) {
-  console.log(req.body.task)
+// console.log(res)
   items.selectAll(function(err, results) {
     if(err) {
       res.sendStatus(500);
@@ -24,7 +24,7 @@ app.get('/items', function (req, res) {
     });
 });
 app.post('/items', function(req, res){
-  let task    = req.body.task;
+  let task = req.body.task;
 
  if(!task) {
    res.sendStatus(400);

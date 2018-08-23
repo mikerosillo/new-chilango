@@ -11,20 +11,20 @@ class AddTask extends React.Component {
   }
   handleChange(e) {
   this.setState({task: e.target.value});
+//  console.log(this.state.task)
 }
-
-add(e) {
+add() {
   //alert('A task was created');
   this.props.AddText(this.state.task)
   this.setState({task:""})
-  e.preventDefault();
+  
 }
     render(){
       return(
-      <div className ="button">
-        <form onClick={this.add}>
+      <div>
+        <form >
           <input type="text" value={this.state.task} onChange={this.handleChange} />
-          <input type="submit" value="Submit" />
+          <button onClick={this.add} type="submit" value="Submit"></button>
         </form>
       </div>
   )

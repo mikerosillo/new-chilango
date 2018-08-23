@@ -16,6 +16,7 @@ var selectAll = function(callback) {
     }
   });
 };
+
 var insertOne = function(task, cb) {
  con.query('INSERT INTO items (task) VALUES (?)',
    [task], (err, results, fields) => {

@@ -10,26 +10,42 @@ class App extends React.Component {
     this.state = {
       items: []
     }
+    this.addText=this.addText.bind(this);
+    this.getText=this.getText.bind(this);
   }
-  componentDidMount() {
-    $.ajax({
+  addText(description, quantity){
+     $.ajax({
+       method: "POST",
+       url: "/items",
+       contentType: 'application/json',
+       data: JSON.stringify({
+        text: text,
+       })
+     }).done(() => {
+       this.getText();
+     });
+   }
+    getText(){
+      $.ajax({
       url: '/items',
-      success: (data) => {
-        this.setState({
-          items: data
-        })
+      method: 'GET',
+      success: (results) => {
+        this.setState({text:results});
       },
-      error: (err) => {
+      error: (xhr, err) => {
         console.log('err', err);
       }
-    });
+    })
+    }
+  componentDidMount() {
+    this.getText();
   }
 
   render () {
     return (<div className = "remember">
       <h1>Important things to remember</h1>
       <List items={this.state.items}/>
-      <AddTask/>
+      <AddTask addText={this.addText}/>
     </div>)
   }
 }

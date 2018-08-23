@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
-// var items = require('../database-mysql');
+var items = require('../database-mysql');
 // var items = require('../database-mongo');
 
 var app = express();
@@ -25,7 +25,7 @@ app.get('/items', function (req, res) {
 app.post('/groceries', function(req, res){
   let text    = req.body.text;
 
- if(!description) {
+ if(!text) {
    res.sendStatus(400);
  } else {
    database.insertOne(text, (err, results) => {

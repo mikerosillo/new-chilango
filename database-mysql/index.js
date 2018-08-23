@@ -16,5 +16,17 @@ var selectAll = function(callback) {
     }
   });
 };
+var insertOne = function(description, quantity, cb) {
+ con.query('INSERT INTO items (text) VALUES (?, ?)',
+   [text], (err, results, fields) => {
+     if(err) {
+       cb(err, null);
+     } else {
+       console.log(results);
+       cb(null, results);
+     }
+   });
+};
 
 module.exports.selectAll = selectAll;
+module.exports.insertOne = insertOne;

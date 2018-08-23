@@ -18,9 +18,24 @@ app.get('/items', function (req, res) {
     if(err) {
       res.sendStatus(500);
     } else {
-      res.json(data);
+      res.status(200).json(data);
     }
   });
+});
+app.post('/groceries', function(req, res){
+  let text    = req.body.text;
+
+ if(!description) {
+   res.sendStatus(400);
+ } else {
+   database.insertOne(text, (err, results) => {
+     if (err) {
+       res.sendStatus(500);
+     } else {
+       res.status(200).json(results);
+     }
+   });
+ }
 });
 
 app.listen(3000, function() {

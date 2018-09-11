@@ -16,7 +16,7 @@ import Cera from "./components/museums/cera.js";
 import Frida from "./components/museums/frida.js";
 import Papalote from "./components/museums/papalote.js";
 import Planetario from "./components/museums/planetario.js";
-//import Main from "./components/museums/more/main.js";
+import Main from "./components/more/main.js";
 
 import Piramides from "./components/close/piramides.js";
 import Tepozotlan from "./components/close/tepozotlan.js";
@@ -56,6 +56,7 @@ class App extends React.Component{
           <Route path="/marqueza" component={Marqueza}/>
           <Route path="/tula" component={Tula}/>
           <Route  path="/forum" component={Forum} />
+          <Route  path="/more" component={Main} />
           </Switch>
       </div>
       </BrowserRouter>

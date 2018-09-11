@@ -38,6 +38,7 @@ import {Link} from 'react-router-dom';
     </div>
   </div>
   <Link to="/forum">Last minute events!</Link>
+  <Link to="/more">More!</Link>
 </div>
    </div>
  );

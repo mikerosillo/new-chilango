@@ -32,19 +32,13 @@ h2{
 .navbar {
     overflow: hidden;
     background-color:rgb(116, 99, 107);
-
-
-
-
     border line: hidden;
 }
 /* this is modifying the letters of main menu buttons */
 .navbar a {
     float: left;
     font-size: 30px;
-
-
-  color: white;
+    color: white;
     text-shadow: 4px 4px 6px  #000000;
     font-style: oblique;
     text-align: center;

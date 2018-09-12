@@ -30,7 +30,7 @@ class LikeButton extends React.Component{
       <div className="counter">
       <h3>{this.state.count}  <button className="btn" onClick={this.Like}>
       <img src="https://i.imgur.com/U7C5R53.jpg?3"/></button> {this.state.count2}
-      <button className="btn" onClick={this.unlike}>
+      <button className="btn2" onClick={this.unlike}>
       <img src="https://i.imgur.com/U7C5R53.jpg?4"/></button> </h3>
 
       </div>

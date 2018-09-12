@@ -38,6 +38,36 @@ app.post('/forum', function(req, res){
    });
  }
 });
+//up is for the forun requests
+// down is for the likes
+app.get('/', function(req, res){
+  database.selectLikes((err, results) => {
+     if(err) {
+       console.log('eror conecting to the database');
+       res.sendStatus(500);
+     } else {
+       res.status(200).json(results);
+     }
+   })
+})
+
+app.post('/', function(req, res){
+
+ let likes = req.body.likes;
+
+ if(!likes) {
+   res.sendStatus(400);
+   console.log("erooooooorrrrr");
+ } else {
+   database.insertLikes(likes,(err, results) => {
+     if (err) {
+       res.sendStatus(500);
+     } else {
+       res.status(200).json(results);
+     }
+   });
+ }
+});
 
  //  app.get('*', (req, res) => {
  //   res.sendFile(path.resolve(__dirname + '/../react-client/dist/index.html'));

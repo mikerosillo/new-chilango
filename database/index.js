@@ -21,10 +21,34 @@ var insertOne = function(description,description2, cb) {
    [description, description2], (err, results, fields) => {
      if(err) {
        cb(err, null);
-     } else {       
+     } else {
        cb(null, results);
      }
    });
 };
+//avobe is for forum below is for likes
+var selectLikes = function(cb) {
+ con.query('SELECT * FROM likesbox', (err, results, fields)=> {
+   if(err) {
+     cb(err, null);
+   } else {
+     cb(null, results);
+   }
+ });
+};
+var insertLikes = function(likes, cb) {
+ con.query('INSERT INTO likesbox (likes) VALUES (?)',
+   [likes], (err, results, fields) => {
+     if(err) {
+       cb(err, null);
+     } else {
+       cb(null, results);
+     }
+   });
+};
+
+
 module.exports.selectAll = selectAll;
 module.exports.insertOne = insertOne;
+module.exports.selectLikes = selectLikes;
+module.exports.insertLikes = insertLikes;

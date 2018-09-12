@@ -2,7 +2,8 @@ import React , { Component } from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Bar from "./bar.js";
 import TypeWriteR from "./typeWriter.jsx";
-import LikeButton from './likeButton.js'
+import AddLikes from './addLikes.jsx';
+//import MainLikes from './mainLikes.jsx';
 
 class Home extends React.Component{
   render(){
@@ -26,7 +27,8 @@ class Home extends React.Component{
           <br/>
           <br/>
 
-          <LikeButton />
+          <AddLikes />
+
           </div>
           </div>
 

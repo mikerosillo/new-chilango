@@ -10,7 +10,7 @@ CREATE TABLE comments(
  description2 text(600) NOT NULL,
  PRIMARY KEY (ID)
 );
-CREATE TABLE likes(
+CREATE TABLE likesbox(
  id int NOT NULL AUTO_INCREMENT,
  likes integer NOT NULL,
  unlikes integer NOT NULL,

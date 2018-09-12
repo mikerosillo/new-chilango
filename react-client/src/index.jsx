@@ -28,6 +28,7 @@ import Forum from "./components/forum.jsx";
 
 
 
+
 class App extends React.Component{
   render(){
     return(
@@ -58,6 +59,7 @@ class App extends React.Component{
           <Route path="/tula" component={Tula}/>
           <Route  path="/forum" component={Forum} />
           <Route  path="/more" component={Main} />
+
           </Switch>
       </div>
       </BrowserRouter>

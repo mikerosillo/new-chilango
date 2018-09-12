@@ -123,6 +123,19 @@ h2{
 
 
 }
+.btn2 {
+  align-self: auto;
+  box-shadow: 6px 6px 8px  #000000;
+color:rgb(173, 154, 173);
+font-style: oblique;
+text-shadow: 6px 6px 8px  #000000;
+font-size: 20px;
+background-color:rgb(27, 41, 133);
+border-color:rgb(13, 130, 142);
+border-width: thick;
+
+
+}
 .counter {
   color:rgb(101, 177, 180);
   font-size: 23px;

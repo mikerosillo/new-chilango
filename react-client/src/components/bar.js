@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
  const Bar = () => (
    <div>
   <div className="navbar">
-  <Link to="/">Home</Link>
+  <Link to="/"><img src="https://i.imgur.com/hsL9aAw.png?1"/></Link>
   <div className="subnav">
     <button className="subnavbtn">Museums <i className="fa fa-caret-down"></i></button>
     <div className="subnav-content">

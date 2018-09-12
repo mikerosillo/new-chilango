@@ -22,7 +22,7 @@ font-size:80px;
 h2{
   text-align: center;
   color:rgb(77, 162, 162) ;
-  font-size: 40px;
+  font-size: 47px;
   font-style: oblique;
   text-shadow: 4px 4px 6px  #000000;
 }
@@ -96,11 +96,11 @@ h2{
 }
  /* this is for the typewriter component */
  .Type{
-   color:rgb(95, 242, 16) ;
+   color:rgb(157, 233, 31) ;
    text-shadow: 4px 4px 6px  #000000;
    font-style: oblique;
    text-align: center;
-   font-size: 20px;
+   font-size: 27px;
  }
 /*this is to test letter color of the descriptions inside the components from the places*/
  .route{
@@ -109,6 +109,24 @@ h2{
    font-size: 25px;
    font-style: oblique;
  }
+ /*thie is for the likeButton*/
+ .btn {
+   align-self: auto;
+   box-shadow: 6px 6px 8px  #000000;
+ color:rgb(173, 154, 173);
+ font-style: oblique;
+ text-shadow: 6px 6px 8px  #000000;
+ font-size: 20px;
+ background-color:rgb(27, 41, 133);
+ border-color:rgb(13, 130, 142);
+ border-width: thick;
+
+
+}
+.counter {
+  color:rgb(101, 177, 180);
+  font-size: 23px;
+}
 /*this is for the videos shadow*/
 .videos{
    box-shadow: 0 15px 20px 0 rgba(0, 0, 5, 5), 0 15px 30px 0 rgba(0, 0, 5, 5);
@@ -155,7 +173,7 @@ h2{
 }
 /*this is for the text on the forum comment box*/
 .textbox{
-  color:#B386DE;
+  color:rgb(222, 139, 139);
   font-size:20px;
 }
 .posts{

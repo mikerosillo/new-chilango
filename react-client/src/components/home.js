@@ -4,6 +4,7 @@ import Bar from "./bar.js";
 import TypeWriteR from "./typeWriter.jsx";
 import AddLikes from './addLikes.jsx';
 //import MainLikes from './mainLikes.jsx';
+//import Carousel from '/carousel.js';
 
 class Home extends React.Component{
   render(){
@@ -26,6 +27,7 @@ class Home extends React.Component{
           <br/>
           <br/>
           <br/>
+          
 
           <AddLikes />
 

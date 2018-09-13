@@ -13,6 +13,5 @@ CREATE TABLE comments(
 CREATE TABLE likesbox(
  id int NOT NULL AUTO_INCREMENT,
  likes integer NOT NULL,
- unlikes integer NOT NULL,
  PRIMARY KEY (ID)
 );

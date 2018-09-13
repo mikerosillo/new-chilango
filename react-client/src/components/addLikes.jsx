@@ -5,7 +5,7 @@ class AddLikes extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      likes:0,
+      likes:12,
       unlikes:0
     }
 
@@ -15,12 +15,13 @@ class AddLikes extends React.Component {
   }
 
   addLikePost(likes){
+    console.log("likes front end ", likes);
     $.ajax({
       method: 'POST',
       url:'/',
       contentType: 'application/json',
       data: JSON.stringify({
-        likes: likes
+        likes: this.state.likes
       })
     }).done(() => {
       this.getLikePost();
@@ -32,20 +33,24 @@ class AddLikes extends React.Component {
      url: '/',
      method: 'GET',
      succes: (results) => {
+
        this.setState({likes:results});
      },
      error: (xhr, err) => {
+
        console.log('err', err);
      }
    })
  }
  componentDidMount(){
-   this.getLikePost();
+   this.getLikePost(),
+   this.Like();
  }
   Like (){
     this.setState({
-      likes: this.state.likes + 1
+      likes : this.state.likes + 1
     });
+    console.log("this is the state " , this.state.likes);
   }
   async unlike (){
     this.setState({
@@ -61,7 +66,7 @@ two(){
       <div>
 
        <h3>{this.state.likes}
-        <button className="btn" onClick={this.two}>
+       <button className="btn" onClick={this.two}>
        <img src="https://i.imgur.com/U7C5R53.jpg?3"/></button> {this.state.unlikes}
        <button className="btn2" onClick={this.unlike}>
        <img src="https://i.imgur.com/U7C5R53.jpg?4"/></button> </h3>

@@ -7,7 +7,6 @@ const path = require('path');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-
 app.use(express.static(__dirname + '/../react-client/dist'));
 
 app.get('/forum', function(req, res){
@@ -52,15 +51,16 @@ app.get('/', function(req, res){
 })
 
 app.post('/', function(req, res){
+console.log(req.body)
+ let gustos = req.body.likes;
 
- let likes = req.body.likes;
-
- if(!likes) {
+ if(!gustos) {
    res.sendStatus(400);
-   console.log("erooooooorrrrr");
+   console.log("current likes",gustos);
  } else {
-   database.insertLikes(likes,(err, results) => {
+   database.insertLikes(gustos,(err, results) => {
      if (err) {
+       console.log("this is to see whats going on",err);
        res.sendStatus(500);
      } else {
        res.status(200).json(results);

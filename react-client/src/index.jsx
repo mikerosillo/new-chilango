@@ -25,6 +25,7 @@ import Valle from "./components/close/valle.js";
 import Marqueza from "./components/close/marqueza.js";
 import Tula from "./components/close/tula.js";
 import Forum from "./components/forum.jsx";
+//import Carousel from '/carousel.js';
 
 
 
@@ -59,6 +60,8 @@ class App extends React.Component{
           <Route path="/tula" component={Tula}/>
           <Route  path="/forum" component={Forum} />
           <Route  path="/more" component={Main} />
+
+
 
           </Switch>
       </div>

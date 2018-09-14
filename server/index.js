@@ -74,5 +74,5 @@ console.log(req.body)
  //   res.sendFile(path.resolve(__dirname + '/../react-client/dist/index.html'));
  // });
 app.listen(process.env.PORT || 3000, function() {
-  console.log('app is running on port ${proces.env.PORT}');
-});
+  console.log(`app is runnig on port ${process.env.PORT}`);
+})

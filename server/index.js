@@ -7,7 +7,6 @@ const path = require('path');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-
 app.use(express.static(__dirname + '/../react-client/dist'));
 
 app.get('/forum', function(req, res){
@@ -17,6 +16,7 @@ app.get('/forum', function(req, res){
        res.sendStatus(500);
      } else {
        res.status(200).json(results);
+       console.log("results",results);
      }
    })
 })
@@ -38,10 +38,41 @@ app.post('/forum', function(req, res){
    });
  }
 });
+//up is for the forun requests
+// down is for the likes
+app.get('/likes', function(req, res){
+  database.selectLikes((err, results) => {
+     if(err) {
+       console.log('eror conecting to the database');
+       res.sendStatus(500);
+     } else {
+       res.status(200).json(results);
+     }
+   })
+})
 
- //  app.get('*', (req, res) => {
- //   res.sendFile(path.resolve(__dirname + '/../react-client/dist/index.html'));
- // });
-app.listen(3000, function() {
-  console.log('Server started and listening on port 3000');
+app.post('/likes', function(req, res){
+console.log(req.body)
+ let gustos = req.body.likes;
+
+ if(!gustos) {
+   res.sendStatus(400);
+   console.log("current likes",gustos);
+ } else {
+   database.insertLikes(gustos,(err, results) => {
+     if (err) {
+       console.log("this is to see whats going on",err);
+       res.sendStatus(500);
+     } else {
+       res.status(200).json(results);
+     }
+   });
+ }
 });
+
+   app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname + '/../react-client/dist/index.html'));
+  });
+app.listen(process.env.PORT || 3000, function() {
+  console.log(`app is runnig on port ${process.env.PORT}`);
+})

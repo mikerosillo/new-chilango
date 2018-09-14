@@ -17,6 +17,7 @@
     "webpack": "^2.2.1"
   },
   "dependencies": {
+    "@google-cloud/storage": "^2.0.3",
     "angular": "^1.6.3",
     "body-parser": "^1.17.2",
     "express": "^4.15.0",

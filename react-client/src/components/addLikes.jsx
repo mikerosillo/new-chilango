@@ -18,7 +18,7 @@ class AddLikes extends React.Component {
     console.log("likes front end ", likes);
     $.ajax({
       method: 'POST',
-      url:'/',
+      url:'/likes',
       contentType: 'application/json',
       data: JSON.stringify({
         likes: this.state.likes
@@ -30,9 +30,9 @@ class AddLikes extends React.Component {
 
  getLikePost(){
    $.ajax({
-     url: '/',
+     url: '/likes',
      method: 'GET',
-     succes: (results) => {
+     success: (results) => {
 
        this.setState({likes:results});
      },

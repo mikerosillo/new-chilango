@@ -16,6 +16,7 @@ app.get('/forum', function(req, res){
        res.sendStatus(500);
      } else {
        res.status(200).json(results);
+       console.log("results",results);
      }
    })
 })
@@ -39,7 +40,7 @@ app.post('/forum', function(req, res){
 });
 //up is for the forun requests
 // down is for the likes
-app.get('/', function(req, res){
+app.get('/likes', function(req, res){
   database.selectLikes((err, results) => {
      if(err) {
        console.log('eror conecting to the database');
@@ -50,7 +51,7 @@ app.get('/', function(req, res){
    })
 })
 
-app.post('/', function(req, res){
+app.post('/likes', function(req, res){
 console.log(req.body)
  let gustos = req.body.likes;
 
@@ -72,6 +73,6 @@ console.log(req.body)
  //  app.get('*', (req, res) => {
  //   res.sendFile(path.resolve(__dirname + '/../react-client/dist/index.html'));
  // });
-app.listen(3000, function() {
-  console.log('Server started and listening on port 3000');
+app.listen(process.env.PORT || 3000, function() {
+  console.log('app is running on port ${proces.env.PORT}');
 });
